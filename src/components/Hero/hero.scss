@@ -1,40 +1,51 @@
-@use '../../styles/utils.scss' as *;
+@use "../../styles/utils.scss" as *;
 
 .hero {
-    position: relative;
-    height: 500px;
+  position: relative;
+  height: 500px;
+  @include center;
+  overflow: hidden;
+  &__title {
+    background-color: transparent;
+    position: absolute;
     @include center;
-    overflow: hidden;
-
-    &__title {
-        position: absolute;
-        @include center;
-        flex-direction: column;
-        top: 50%;
-        translate: 0% -50%;
-        z-index: 10;
-        color: white;
-        text-shadow: 5px 5px 5px black;
-        text-align: center;
-        h1 {
-            font-size: 42px;
-            width: 75%;
-        }
-        p {
-            margin-top: 32px;
-            font-size: 20px;
-            width: 75%;
-        }
+    flex-direction: column;
+    top: 50%;
+    translate: 0% -50%;
+    z-index: 10;
+    color: white;
+    text-shadow: 2px 2px 5px white;
+    text-align: center;
+    width: 100%;
+    gap: 20px;
+    h1 {
+      font-size: 54px;
+      width: 75%;
+      background-color: transparent;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: black;
+      @include screen("sm") {
+        font-size: 40px;
+        width: 90%;
+      }
     }
-
-    .swiper {
-        height: 500px;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
+    img {
+      background-color: transparent;
+      width: 300px;
+      filter: drop-shadow(2px 2px 4px white);
+      @include screen("sm") {
+        width: 200px;
+      }
     }
+  }
+  .swiper {
+    height: 500px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
 }

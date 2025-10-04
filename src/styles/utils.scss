@@ -1,5 +1,44 @@
+// Colors
+$darkred: #B22222;
+
+// Responsive
+$breakpoints: (
+  "xs": 480px,
+  "sm": 768px,
+  "md": 1024px,
+  "lg": 1280px,
+  "xl": 1440px
+);
+@mixin screen($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+    @media (max-width: $value) {
+      @content;
+    }
+}
+
+
 @mixin center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin sectionLayout {
+  padding-top: 48px;
+  padding-left: 2%;
+  padding-right: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 40px;
+  h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    align-self: flex-start;
+    @include screen('sm') {
+      font-size: 32px;
+    }
+    }
 }

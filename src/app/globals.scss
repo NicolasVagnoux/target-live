@@ -1,7 +1,7 @@
 @use '../styles/utils.scss' as *;
 
 :root {
-  --background: #ffffff;
+  --background: #000000;
   --foreground: #171717;
 }
 
@@ -17,8 +17,10 @@
 @import 'swiper/css/pagination';
 @import 'swiper/css/scrollbar';
 
-
-@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400&display=swap");
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap');
 
 html,
 body {
@@ -38,7 +40,10 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Exo 2';
+  background-color: black;
+  color: white;
+  font-family: 'Oswald';
+  font-weight: 400;
 }
 
 .container {
@@ -46,8 +51,8 @@ body {
   margin: auto;
 }
 
+// Header
 .header {
-  background-color: rgb(0, 0, 0, 0.5);
   height: 80px;
   &__inner {
     height: 100%;
@@ -65,12 +70,24 @@ body {
       justify-content: flex-end;
       align-items: flex-end;
       gap: 40px;
+      @include screen('sm') {
+            gap: 24px;
+          }
       &__sections {
         height: 100%;
         @include center;
         gap: 20px;
         a {
-          font-size: 1.2rem;
+          font-size: 1.5rem;
+          font-weight: 300;
+          @include screen('sm') {
+            font-size: 1.2rem;
+          }
+          cursor: pointer;
+          transition: 150ms ease-in-out;
+          &:hover {
+            transform: rotate(-3deg)
+          }
         }
       }
       &__social {
@@ -79,8 +96,20 @@ body {
         a {
          height: 50%;
          @include center;
+         transition: 150ms ease-in-out;
+          &:hover {
+            transform: rotate(-5deg)
+          }
         }
       }
     }
   }
+}
+
+.footer {
+  padding-top: 32px;
+  padding-bottom: 24px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
 }

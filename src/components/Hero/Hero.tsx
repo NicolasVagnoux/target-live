@@ -9,10 +9,10 @@ const Hero = () => {
   const images = ['./assets/hero/hero1.jpg', './assets/hero/hero2.jpg', './assets/hero/hero3.jpg'];
 
   return (
-    <div className='hero'>
+    <section className='hero'>
       <div className='hero__title'>
+        <img src='./assets/target_live.png' alt='target-live' />
         <h1>Collectif d&apos;artistes émergents lyonnais</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor ex et sapien sollicitudin sollicitudin. Fusce porta pharetra vestibulum. Duis vestibulum varius dolor, non rhoncus ex. Maecenas consequat luctus ipsum sed porta. Vestibulum massa nibh, tincidunt vitae lacinia at, mattis eget nisi. Nulla eu elit pretium, tempor tortor ac, aliquet leo.</p>
       </div>
       <Swiper
         modules={[Navigation, Autoplay]}
@@ -28,7 +28,7 @@ const Hero = () => {
           </SwiperSlide>
         )}
       </Swiper>
-    </div>
+    </section>
   );
 };
 

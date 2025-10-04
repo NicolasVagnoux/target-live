@@ -1,0 +1,35 @@
+@use "../../styles/utils.scss" as *;
+
+.concerts {
+  @include sectionLayout;
+  .swiper {
+    @include center;
+    position: relative;
+    width: 75%;
+    @include screen('md') {
+        width: 100%;
+    }
+    img {
+      width: 100%;
+      cursor: pointer;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      background-color: transparent;
+
+      path {
+        color: black;
+      }
+      .swiper-navigation-icon {
+        background-color: transparent;
+        filter: drop-shadow(2px 2px 5px gray);
+      }
+    }
+    .swiper-pagination {
+      background-color: transparent;
+      .swiper-pagination-bullet-active {
+        background-color: black;
+      }
+    }
+  }
+}
