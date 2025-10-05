@@ -23,7 +23,8 @@
       width: 75%;
       background-color: transparent;
       text-transform: uppercase;
-      font-weight: 500;
+      font-weight: 600;
+      letter-spacing: 4px;
       color: black;
       @include screen("sm") {
         font-size: 40px;

@@ -24,7 +24,8 @@ $breakpoints: (
 }
 
 @mixin sectionLayout {
-  padding-top: 48px;
+  margin-top: 40px;
+  padding-top: 40px;
   padding-left: 2%;
   padding-right: 2%;
   display: flex;
@@ -35,7 +36,8 @@ $breakpoints: (
   gap: 40px;
   h1 {
     text-transform: uppercase;
-    font-size: 40px;
+    font-size: 48px;
+    font-weight: 500;
     align-self: flex-start;
     @include screen('sm') {
       font-size: 32px;

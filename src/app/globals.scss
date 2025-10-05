@@ -21,6 +21,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100..700&display=swap');
 
 html,
 body {
@@ -42,7 +43,7 @@ body {
   margin: 0;
   background-color: black;
   color: white;
-  font-family: 'Oswald';
+  font-family: 'Barlow', 'Oswald';
   font-weight: 400;
 }
 
@@ -52,62 +53,9 @@ body {
 }
 
 // Header
-.header {
-  height: 80px;
-  &__inner {
-    height: 100%;
-    padding: 0px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    img {
-      height: 75%;
-    }
-    &__links {
-      height: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: flex-end;
-      gap: 40px;
-      @include screen('sm') {
-            gap: 24px;
-          }
-      &__sections {
-        height: 100%;
-        @include center;
-        gap: 20px;
-        a {
-          font-size: 1.5rem;
-          font-weight: 300;
-          @include screen('sm') {
-            font-size: 1.2rem;
-          }
-          cursor: pointer;
-          transition: 150ms ease-in-out;
-          &:hover {
-            transform: rotate(-3deg)
-          }
-        }
-      }
-      &__social {
-        height: 100%;
-        @include center;
-        a {
-         height: 50%;
-         @include center;
-         transition: 150ms ease-in-out;
-          &:hover {
-            transform: rotate(-5deg)
-          }
-        }
-      }
-    }
-  }
-}
 
 .footer {
-  padding-top: 32px;
+  padding-top: 48px;
   padding-bottom: 24px;
   width: 100%;
   margin: auto;

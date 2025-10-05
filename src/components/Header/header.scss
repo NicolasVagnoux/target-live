@@ -1,0 +1,57 @@
+@use '../../styles/utils.scss' as *;
+
+.header {
+  height: 80px;
+  &__inner {
+    height: 100%;
+    padding: 0px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      height: 75%;
+    }
+    &__links {
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: flex-end;
+      gap: 40px;
+      @include screen('sm') {
+            gap: 24px;
+          }
+      &__sections {
+        height: 100%;
+        @include center;
+        gap: 20px;
+        a {
+          font-size: 1.5rem;
+          font-weight: 500;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          @include screen('sm') {
+            font-size: 1.2rem;
+          }
+          cursor: pointer;
+          transition: 150ms ease-in-out;
+          &:hover {
+            transform: rotate(-3deg)
+          }
+        }
+      }
+      &__social {
+        height: 100%;
+        @include center;
+        a {
+         height: 50%;
+         @include center;
+         transition: 150ms ease-in-out;
+          &:hover {
+            transform: rotate(-5deg)
+          }
+        }
+      }
+    }
+  }
+}
