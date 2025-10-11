@@ -10,13 +10,14 @@ const Header = () => {
             <img src='./assets/target_live_white.png' alt='target-live' />
             <div className='header__inner__links'>
               <div className='header__inner__links__sections'>
-                <Link to='concerts' smooth duration={600}>Dates</Link>
+                <Link to='concerts' smooth duration={600}>Concerts</Link>
                 <Link to='artists' smooth duration={600}>Artistes</Link>
-                <Link to='contact' smooth duration={600}>Contact</Link>
+                <Link to='contact' smooth duration={600} id='ct'>Contact</Link>
               </div>
               <div className='header__inner__links__social'>
                 <a href='https://www.instagram.com/targetlive.production/' target='_blank'>
                   <img src="./assets/instagram.svg" alt="hearscape" />
+                  <span>Rejoignez-nous !</span>
                 </a>
               </div>
             </div>

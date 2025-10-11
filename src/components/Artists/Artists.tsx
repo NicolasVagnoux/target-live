@@ -16,30 +16,40 @@ const Artists = () => {
 
   useEffect(() => {
     if (typeof document === 'undefined') return;
-    document.documentElement.style.overflow = !!selectedArtist ? 'hidden' : 'auto';
+    document.documentElement.style.overflow = !!selectedArtist
+      ? 'hidden'
+      : 'auto';
   }, [selectedArtist]);
 
   return (
-    <section className='artists' id='concerts'>
-      <h1>Nos Artistes</h1>
-      <div className='artists__grid'>
-        {randomizedList.map((artist) => (
-          <div
-            onClick={() => setSelectedArtist(artist)}
-            key={artist.id}
-            className='artists__grid__card'
-          >
-            <img src={artist.image} alt={artist.name} />
+    <div className=''>
+      <section className='artists container' id='artists'>
+        <div className='artists__grid'>
+          <div className='artists__grid__title'>
+            <h3>
+              <div></div>Nos Artistes
+            </h3>
           </div>
-        ))}
-        {selectedArtist && (
-          <ArtistModal
-            artist={selectedArtist}
-            setSelectedArtist={setSelectedArtist}
-          />
-        )}
-      </div>
-    </section>
+          {randomizedList.map((artist) => (
+            <div
+              onClick={() => setSelectedArtist(artist)}
+              key={artist.id}
+              className='artists__grid__card'
+            >
+              <div className='artists__grid__card__bghover'></div>
+              <img src={artist.image} alt={artist.name} />
+              <p>{artist.name}</p>
+            </div>
+          ))}
+          {selectedArtist && (
+            <ArtistModal
+              artist={selectedArtist}
+              setSelectedArtist={setSelectedArtist}
+            />
+          )}
+        </div>
+      </section>
+    </div>
   );
 };
 

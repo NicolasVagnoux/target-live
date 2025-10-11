@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="fr">
       <body>
         <Header />
-        <div className='container'>{children}</div>
+        <div>{children}</div>
         <p className='footer'>Copyright © 2025 Target Live | Powered by NVP</p>
       </body>
     </html>

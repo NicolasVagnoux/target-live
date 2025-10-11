@@ -51,7 +51,7 @@ export const artists: Artist[] = [
     image: './assets/artists/PattersonPanique.jpg',
     logo: '',
     style: 'Soft rock',
-    musicians: '2 musiciens + 3 additionnels en live',
+    musicians: '2 membres + 3 additionnels en live',
     description: "Paterson Panique c'est deux frères qui font du soft-rock en français. Paterson Panique c'est la vie quotidienne des relations : la peur, les doutes, les hauts, les bas et parfois tout en même temps...surtout tout en même temps.",
     link: 'https://www.instagram.com/patersonpanique/',
     video: ''
@@ -62,7 +62,7 @@ export const artists: Artist[] = [
     image: './assets/artists/PhoqueOff.jpg',
     logo: './assets/artists/PhoqueOff_logo.png',
     style: 'Ambiant rock',
-    musicians: '4 musiciens',
+    musicians: '4 membres',
     description: 'Phoque Off mêle riffs puissants et atmosphères planantes pour incarner la rage, les blessures et la renaissance. Entre féminisme engagé et histoires de cœur, leur voix frappe, émeut et reste en tête.',
     link: 'https://www.instagram.com/phoqueoffband/?hl=fr',
     video: ''
@@ -73,7 +73,7 @@ export const artists: Artist[] = [
     image: './assets/artists/Ame.jpg',
     logo: '',
     style: 'Pop française',
-    musicians: '1 musicienne',
+    musicians: '1 membre',
     description: "ÂMÉ, c’est une voix à la fois puissante et douce. Artiste sensible et inspirée par le monde qui l’entoure, elle puise dans les émotions humaines pour créer un univers où se croisent mélancolie et espoir. À travers sa musique, ÂMÉ nous invite à prendre soin de notre cœur.",
     link: 'https://linktr.ee/ameliafrenchmusic',
     video: ''
@@ -84,7 +84,7 @@ export const artists: Artist[] = [
     image: './assets/artists/Synesthese.jpg',
     logo: './assets/artists/Synesthese_logo.png',
     style: 'Métal progressif',
-    musicians: '6 musiciens',
+    musicians: '6 membres',
     description: 'Produit d’une hybridation hasardeuse entre Ange, Leprous, Magma, Dark Tranquility et un anthropoïde pratchettien évadé de sa bibliothèque, Synesthèse vous propose une une croisière intime sur les flots troublés de la psyché.',
     link: 'https://www.facebook.com/people/Synesth%C3%A8se/100089871158749/',
     video: ''
@@ -95,7 +95,7 @@ export const artists: Artist[] = [
     image: './assets/artists/EdenBand.jpg',
     logo: '',
     style: 'Rock-Jazz',
-    musicians: '4 musiciens (formule trio actuellement)',
+    musicians: '4 membres (formule trio actuellement)',
     description: 'La musique d’Eben band fait voyager son audience à travers des paysages sensoriels variés mêlant contemplation, sensualité mais aussi force et enchantement.',
     link: 'https://linktr.ee/eben.band.music',
     video: "https://www.youtube.com/embed/dP0DBGTO3_0?si=7K2nFqvXgZNpJbLZ"

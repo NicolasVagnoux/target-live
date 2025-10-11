@@ -1,4 +1,5 @@
 // Colors
+$lightred: #F20519;
 $darkred: #B22222;
 
 // Responsive
@@ -24,8 +25,8 @@ $breakpoints: (
 }
 
 @mixin sectionLayout {
-  margin-top: 40px;
-  padding-top: 40px;
+  padding-top: 64px;
+  padding-bottom: 64px;
   padding-left: 2%;
   padding-right: 2%;
   display: flex;
@@ -35,12 +36,6 @@ $breakpoints: (
   width: 100%;
   gap: 40px;
   h1 {
-    text-transform: uppercase;
-    font-size: 48px;
-    font-weight: 500;
     align-self: flex-start;
-    @include screen('sm') {
-      font-size: 32px;
-    }
     }
 }

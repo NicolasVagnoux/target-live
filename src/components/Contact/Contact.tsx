@@ -42,8 +42,9 @@ const Contact = () => {
   //
 
   return (
-    <section className='contact' id='contact'>
-      <h1>Nous contacter</h1>
+    <div className='section'>
+    <section className='contact container' id='contact'>
+      <h1>Contactez-nous !</h1>
 
       <form onSubmit={handleSubmit(onSubmit)} className=''>
         {/* Nom */}
@@ -94,6 +95,7 @@ const Contact = () => {
         </button>
       </form>
     </section>
+    </div>
   );
 };
 

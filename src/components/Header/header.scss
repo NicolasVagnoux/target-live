@@ -2,12 +2,20 @@
 
 .header {
   height: 80px;
+  width: 100%;
+  background-color: transparent;
+  position: absolute;
+  z-index: 50;
   &__inner {
     height: 100%;
-    padding: 0px 16px;
+    padding: 0px 150px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: transparent;
+    @include screen('md') {
+      padding: 0px 20px;
+    }
     img {
       height: 75%;
     }
@@ -26,17 +34,21 @@
         @include center;
         gap: 20px;
         a {
-          font-size: 1.5rem;
-          font-weight: 500;
+          font-size: 1.1rem;
+          font-weight: 400;
           letter-spacing: 1px;
-          text-transform: uppercase;
           @include screen('sm') {
-            font-size: 1.2rem;
+            font-size: 1rem;
           }
           cursor: pointer;
           transition: 150ms ease-in-out;
           &:hover {
-            transform: rotate(-3deg)
+            transform: scale(0.98)
+          }
+        }
+        a#ct {
+          @include screen('sm') {
+            display: none;
           }
         }
       }
@@ -44,11 +56,27 @@
         height: 100%;
         @include center;
         a {
+        text-decoration: none;
          height: 50%;
          @include center;
          transition: 150ms ease-in-out;
+         gap: 8px;
+         background-color: rgba(white, 0.4);
+         padding: 8px 16px;
+         @include screen('sm') {
+            background-color: transparent;
+          }
+         img {
+          height: 100%;
+         }
+         span {
+          font-size: 1rem;
+          @include screen('sm') {
+            display: none;
+          }
+         }
           &:hover {
-            transform: rotate(-5deg)
+            transform: scale(0.98)
           }
         }
       }
