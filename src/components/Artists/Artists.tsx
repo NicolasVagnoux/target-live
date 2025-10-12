@@ -4,6 +4,7 @@ import './artists.scss';
 import { artists } from '../../../data/data';
 import ArtistModal from './ArtistModal';
 import { Artist } from '../../../data/types';
+import Section from '../Section/Section';
 
 const Artists = () => {
   const [randomizedList, setRandomizedList] = useState(artists);
@@ -22,7 +23,7 @@ const Artists = () => {
   }, [selectedArtist]);
 
   return (
-    <div className=''>
+    <Section color='white'>
       <section className='artists container' id='artists'>
         <div className='artists__grid'>
           <div className='artists__grid__title'>
@@ -49,7 +50,7 @@ const Artists = () => {
           )}
         </div>
       </section>
-    </div>
+    </Section>
   );
 };
 

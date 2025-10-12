@@ -4,13 +4,14 @@ import './hero.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import { Link } from 'react-scroll';
+import Section from '../Section/Section';
 
 const Hero = () => {
   const images = ['./assets/hero/heroMain.jpg'];
 
   return (
-    <div className='section'>
-      <section className='container hero'>
+    <Section color='black'>
+      <section className='hero'>
         <div className='hero__title'>
           <img src='./assets/target_live.png' alt='target-live' />
           <h1>Collectif d&apos;artistes émergents lyonnais</h1>
@@ -35,7 +36,7 @@ const Hero = () => {
           ))}
         </Swiper>
       </section>
-    </div>
+    </Section>
   );
 };
 

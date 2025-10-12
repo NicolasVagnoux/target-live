@@ -56,28 +56,7 @@
         height: 100%;
         @include center;
         a {
-        text-decoration: none;
-         height: 50%;
-         @include center;
-         transition: 150ms ease-in-out;
-         gap: 8px;
-         background-color: rgba(white, 0.4);
-         padding: 8px 16px;
-         @include screen('sm') {
-            background-color: transparent;
-          }
-         img {
-          height: 100%;
-         }
-         span {
-          font-size: 1rem;
-          @include screen('sm') {
-            display: none;
-          }
-         }
-          &:hover {
-            transform: scale(0.98)
-          }
+          @include socialButton;
         }
       }
     }

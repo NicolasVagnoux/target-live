@@ -1,0 +1,46 @@
+@use '../../styles/utils.scss' as *;
+
+.footer {
+  .separator {
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid rgba(white, 0.3);
+  }
+  &__inner {
+    position: relative;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    &__copyright {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      p:nth-child(1) {
+        @include screen('xs') {
+          display: none;
+        }
+      }
+      p:nth-child(2),
+      p:nth-child(3) {
+        display: none;
+        @include screen('xs') {
+          display: inline;
+        }
+      }
+    }
+    a {
+      position: absolute;
+      height: 40px !important;
+      right: 5%;
+      @include socialButton;
+    }
+  }
+}

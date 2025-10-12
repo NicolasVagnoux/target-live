@@ -3,6 +3,7 @@ import React, { useEffect, useMemo } from 'react';
 import './contact.scss';
 import { useForm } from 'react-hook-form';
 import { useForm as useFormSpree } from '@formspree/react';
+import Section from '../Section/Section';
 
 type FormValues = {
   name: string;
@@ -33,7 +34,7 @@ const Contact = () => {
     if (state.submitting) return 'Envoi...';
     if (state.succeeded) return 'Message envoyé !';
     if (state.errors) return 'Erreur :(';
-    return 'Envoyer';
+    return 'Contactez-nous';
   }, [state]);
 
   const onSubmit = async (data: FormValues) => {
@@ -42,60 +43,66 @@ const Contact = () => {
   //
 
   return (
-    <div className='section'>
-    <section className='contact container' id='contact'>
-      <h1>Contactez-nous !</h1>
+    <Section color='black'>
+      <section className='contact container' id='contact'>
+        <div className='contact__columns'>
+          <div className='contact__title'>
+            <h1>Contactez-nous !</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className=''>
-        {/* Nom */}
-        <div className='contact__form__name'>
-          <label>Nom</label>
-          <input
-            type='text'
-            {...register('name', { required: 'Le nom est requis.' })}
-          />
-          {errors.name && <p>{errors.name.message}</p>}
+          <form onSubmit={handleSubmit(onSubmit)} className='contact__form'>
+            {/* Nom */}
+            <div className='contact__form__name'>
+              <input
+                type='text'
+                placeholder='Votre nom'
+                {...register('name', { required: 'Le nom est requis.' })}
+              />
+              {errors.name && <p>{errors.name.message}</p>}
+            </div>
+
+            {/* Email */}
+            <div className='contact__form__email'>
+              <input
+                type='email'
+                placeholder='Votre email'
+                {...register('email', {
+                  required: "L'email est requis.",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: 'Adresse email invalide.',
+                  },
+                })}
+              />
+              {errors.email && <p>{errors.email.message}</p>}
+            </div>
+
+            {/* Message */}
+            <div className='contact__form__message'>
+              <textarea
+                {...register('message', {
+                  required: 'Le message est requis.',
+                })}
+                placeholder='Votre message'
+                rows={4}
+                autoComplete={''}
+              />
+              {errors.message && <p>{errors.message.message}</p>}
+            </div>
+
+            <button
+              type='submit'
+              disabled={state.submitting || state.succeeded}
+              className={(state.submitting || state.succeeded) ? 'disabled' : ''}
+            >
+              {!state.errors && !state.result && !state.submitting && !state.succeeded && <img src='./assets/right_arrow.svg' alt="" />}
+              {buttonMessage}
+            </button>
+          </form>
         </div>
-
-        {/* Email */}
-        <div className='contact__form__email'>
-          <label>Email</label>
-          <input
-            type='email'
-            {...register('email', {
-              required: "L'email est requis.",
-              pattern: {
-                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: 'Adresse email invalide.',
-              },
-            })}
-          />
-          {errors.email && <p>{errors.email.message}</p>}
-        </div>
-
-        {/* Message */}
-        <div className='contact__form__message'>
-          <label>Message</label>
-          <textarea
-            {...register('message', {
-              required: 'Le message est requis.',
-            })}
-            rows={4}
-            autoComplete={''}
-          />
-          {errors.message && <p>{errors.message.message}</p>}
-        </div>
-
-        <button
-          type='submit'
-          disabled={state.submitting || state.succeeded}
-          className=''
-        >
-          {buttonMessage}
-        </button>
-      </form>
-    </section>
-    </div>
+      </section>
+    </Section>
   );
 };
 
