@@ -24,8 +24,12 @@ $breakpoints: (
 }
 
 @mixin sectionLayout {
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-top: 96px;
+  padding-bottom: 96px;
+  @include screen('md') {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
   padding-left: 2%;
   padding-right: 2%;
   display: flex;

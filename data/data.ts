@@ -1,11 +1,27 @@
-import { Artist } from "./types";
+import { Artist, Concert } from "./types";
 
-export const concerts = [
+export const concerts: Concert[] = [
   {
+    id: 1,
+    title: 'Soirée Panique',
+    date: '15/10/2025',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     image: './assets/concerts/concert_1.jpeg',
     link: 'https://www.instagram.com/targetlive.production/',
   },
   {
+    id: 2,
+    title: 'Soirée Panique 2 Panique 2',
+    date: '20/12/2025',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    image: './assets/concerts/concert_2.jpeg',
+    link: 'https://www.instagram.com/targetlive.production/',
+  },
+  {
+    id: 3,
+    title: 'Soirée Panique 3',
+    date: '04/02/2026',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     image: './assets/concerts/concert_1.jpeg',
     link: 'https://www.instagram.com/targetlive.production/',
   },
