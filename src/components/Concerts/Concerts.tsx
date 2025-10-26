@@ -8,9 +8,14 @@ import Section from '../Section/Section';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { Concert } from '../../../data/types';
 import { NavigationOptions } from 'swiper/types';
+import ConcertsList from './ConcertsList';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Concerts = () => {
-  const [activeConcert, setActiveConcert] = useState<Concert>(concerts[0]);
+  const starredConcerts = concerts.filter((concert) => concert.star);
+  const [activeConcert, setActiveConcert] = useState<Concert>(
+    starredConcerts[0]
+  );
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const swiperRef = useRef<SwiperClass | null>(null);
@@ -40,47 +45,61 @@ const Concerts = () => {
         </h1>
         <div className='concerts__grid'>
           <div className='concerts__grid__left'>
-            <p>{activeConcert?.date}</p>
-            <p>{activeConcert?.title}</p>
-            <p>{activeConcert?.description}</p>
+            <AnimatePresence mode='wait'>
+              <motion.div
+                key={activeConcert.title}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.25, ease: 'easeInOut' }}
+              >
+                <p>{activeConcert?.date}</p>
+                <p>{activeConcert?.title}</p>
+                <p>{activeConcert?.location}</p>
+                <p>{activeConcert?.description}</p>
+              </motion.div>
+            </AnimatePresence>
           </div>
           <>
             <Swiper
               modules={[Navigation]}
               onSwiper={(swiper) => (swiperRef.current = swiper)}
               onSlideChange={(swiper) =>
-                setActiveConcert(
-                  concerts.find(
-                    (c) => c.id === swiper.activeIndex + 1
-                  ) as Concert
-                )
+                setActiveConcert(starredConcerts[swiper.activeIndex])
               }
               navigation={{
                 prevEl: prevRef.current,
                 nextEl: nextRef.current,
               }}
               slidesPerView={1.2}
+              speed={500}
               allowTouchMove={false}
               className='swiper'
             >
-              {concerts.map((concert, i) => (
+              {starredConcerts.map((concert, i) => (
                 <SwiperSlide key={i}>
                   <img
-                    onClick={() => window.open(concert.link, '_blank')}
                     src={concert.image}
                     alt={`concert${i + 1}`}
                   />
                 </SwiperSlide>
               ))}
+              <div
+                ref={prevRef}
+                className='concerts-prev swiper-button-disabled'
+              >
+                <ArrowLeft size={40} color='white' />
+              </div>
+              <div
+                ref={nextRef}
+                className='concerts-next swiper-button-disabled'
+              >
+                <ArrowRight size={40} color='white' />
+              </div>
             </Swiper>
-            <div ref={prevRef} className='concerts-prev swiper-button-disabled'>
-              <ArrowLeft size={40} color='white' />
-            </div>
-            <div ref={nextRef} className='concerts-next swiper-button-disabled'>
-              <ArrowRight size={40} color='white' />
-            </div>
           </>
         </div>
+        <ConcertsList />
       </section>
     </Section>
   );

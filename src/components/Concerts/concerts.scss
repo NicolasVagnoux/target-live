@@ -5,6 +5,7 @@
   position: relative;
   padding-top: 32px;
   padding-bottom: 120px;
+  gap: 20px;
   @include screen('md') {
     padding-top: 0px;
     padding-bottom: 96px;
@@ -34,13 +35,13 @@
     @include screen('md') {
       grid-template-columns: 1fr;
     }
-    &__left {
+    &__left > div {
       width: 100%;
       padding: 0px 32px;
       @include center;
       flex-direction: column;
       justify-content: flex-start;
-      gap: 20px;
+      gap: 16px;
       @include screen('md') {
         margin-bottom: 48px;
       }
@@ -57,22 +58,28 @@
         font-weight: 600;
         text-transform: uppercase;
       }
+      p:nth-child(3) {
+        font-size: 18px;
+        // text-decoration: underline;
+      }
+      p:nth-child(4) {
+        font-size: 14px;
+      }
     }
   }
   .swiper {
     @include center;
     position: relative;
     width: 100%;
+    padding-bottom: 48px;
     @include screen('md') {
       width: 100%;
     }
     img {
       width: 100%;
-      cursor: pointer;
     }
     .swiper-slide {
       position: relative;
-      transition: 300ms ease-in-out;
     }
     .swiper-navigation-icon {
       background-color: transparent;
@@ -81,36 +88,31 @@
   }
 
   .swiper-slide-next {
-    transform: scale(0.9);
+    transform: scale(0.92);
     filter: blur(3px);
-    margin-left: -15px;
   }
   .swiper-slide-prev {
-    transform: scale(0.9);
+    transform: scale(0.92);
     filter: blur(3px);
-    margin-right: -15px;
   }
 
   .concerts-prev,
   .concerts-next {
     position: absolute;
     cursor: pointer;
-    bottom: 64px;
+    bottom: 0;
     width: 40px;
     height: 40px;
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
-    @include screen('md') {
-      bottom: 48px;
-    }
   }
   .concerts-next {
     right: 2%;
   }
   .concerts-prev {
-    right: 6%;
+    right: 8%;
     @include screen('md') {
       right: 12%;
     }
@@ -119,5 +121,37 @@
   .concerts-next.swiper-button-disabled {
     opacity: 0.5;
     cursor: default;
+  }
+}
+
+.concertsList {
+  width: 100%;
+  padding-left: 32px;
+  padding-right: 32px;
+  thead,
+  tbody,
+  tr {
+    width: 100%;
+  }
+  tr {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(white, 0.3);
+    th {
+      justify-self: start;
+      font-size: 14px;
+      text-align: left;
+      padding-right: 2px;
+    }
+  }
+  tbody tr {
+    cursor: pointer;
+  }
+  tbody th {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
   }
 }

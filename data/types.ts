@@ -1,10 +1,11 @@
 export type Concert = {
-    id: number,
     title: string,
     date: string,
+    location: string,
     description: string,
     image: string,
     link: string,
+    star: boolean
 }
 
 export type Artist = {
