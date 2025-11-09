@@ -80,6 +80,7 @@
     }
     .swiper-slide {
       position: relative;
+      @include center;
     }
     .swiper-navigation-icon {
       background-color: transparent;
@@ -143,7 +144,7 @@
       justify-self: start;
       font-size: 14px;
       text-align: left;
-      padding-right: 2px;
+      padding-right: 6px;
     }
   }
   tbody tr {
