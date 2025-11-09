@@ -1,19 +1,27 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import './artists.scss';
-import { artists } from '../../../data/data';
 import ArtistModal from './ArtistModal';
 import { Artist } from '../../../data/types';
 import Section from '../Section/Section';
+import { fetchArtists } from '@/utils/fetch';
 
 const Artists = () => {
-  const [randomizedList, setRandomizedList] = useState(artists);
+  const [artists, setArtists] = useState<Artist[]>([]);
+  const [randomizedList, setRandomizedList] = useState<Artist[]>([]);
   const [selectedArtist, setSelectedArtist] = useState<Artist | null>();
+
+  useEffect(() => {
+    const getArtists = async () => {
+      setArtists(await fetchArtists());
+    };
+    getArtists();
+  }, [fetchArtists]);
 
   useEffect(() => {
     const shuffled = [...artists].sort(() => Math.random() - 0.5);
     setRandomizedList(shuffled);
-  }, []);
+  }, [artists]);
 
   useEffect(() => {
     if (typeof document === 'undefined') return;

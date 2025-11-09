@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './hero.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
@@ -7,7 +7,13 @@ import { Link } from 'react-scroll';
 import Section from '../Section/Section';
 
 const Hero = () => {
-  const images = ['./assets/hero/heroMain.jpg'];
+  const images = ['./assets/hero/hero1.jpg', './assets/hero/hero2.jpg', './assets/hero/hero3.jpg', './assets/hero/hero4.jpg'];
+
+  const [randomizedImages, setRandomizedImages] = useState<string[]>([]);
+  useEffect(() => {
+      const shuffled = [...images].sort(() => Math.random() - 0.5);
+      setRandomizedImages(shuffled);
+    }, []);
 
   return (
     <Section color='black'>
@@ -29,7 +35,7 @@ const Hero = () => {
           loop
           className='swiper'
         >
-          {images.map((image, i) => (
+          {randomizedImages.map((image, i) => (
             <SwiperSlide key={i}>
               <img src={image} alt={`hero${i + 1}`} />
             </SwiperSlide>

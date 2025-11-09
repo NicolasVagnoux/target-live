@@ -1,7 +1,11 @@
 import React from 'react';
-import { concerts } from '../../../data/data';
+import { Concert } from '../../../data/types';
 
-const ConcertsList = () => {
+type ConcertsListProps = {
+  concerts: Concert[];
+}
+
+const ConcertsList = ({ concerts }: ConcertsListProps) => {
   return (
     <table className='concertsList'>
       <thead>
