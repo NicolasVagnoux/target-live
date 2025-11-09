@@ -48,7 +48,13 @@ const Contact = () => {
         <div className='contact__columns'>
           <div className='contact__title'>
             <h1>Contactez-nous !</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>
+              Vous souhaitez organiser un concert ou collaborer avec nous ?{' '}
+              <br />
+              Le collectif est ouvert aux propositions et aux bonnes idées.
+              <br />
+              Laissez-vous un message, on vous répond vite !
+            </p>
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className='contact__form'>
@@ -94,9 +100,14 @@ const Contact = () => {
             <button
               type='submit'
               disabled={state.submitting || state.succeeded}
-              className={(state.submitting || state.succeeded) ? 'disabled' : ''}
+              className={state.submitting || state.succeeded ? 'disabled' : ''}
             >
-              {!state.errors && !state.result && !state.submitting && !state.succeeded && <img src='./assets/right_arrow.svg' alt="" />}
+              {!state.errors &&
+                !state.result &&
+                !state.submitting &&
+                !state.succeeded && (
+                  <img src='./assets/right_arrow.svg' alt='' />
+                )}
               {buttonMessage}
             </button>
           </form>

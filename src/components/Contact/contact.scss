@@ -17,6 +17,7 @@
     @include center;
     flex-direction: column;
     justify-content: center;
+    align-items: start;
     gap: 16px;
     @include screen('sm') {
       width: 90%;
