@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.scss";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Target Live",
@@ -21,6 +22,8 @@ export default function RootLayout({
         <Header />
         <div>{children}</div>
         <Footer />
+        
+        <Analytics />
       </body>
     </html>
   );
