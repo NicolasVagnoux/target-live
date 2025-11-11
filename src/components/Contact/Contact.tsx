@@ -49,11 +49,11 @@ const Contact = () => {
           <div className='contact__title'>
             <h1>Contactez-nous !</h1>
             <p>
-              Vous souhaitez organiser un concert ou collaborer avec nous ?{' '}
+              Vous souhaitez organiser un concert ou collaborer avec nous ?
               <br />
               Le collectif est ouvert aux propositions et aux bonnes idées.
               <br />
-              Laissez-vous un message, on vous répond vite !
+              Laissez-nous un message, on vous répond vite !
             </p>
           </div>
 
